@@ -442,3 +442,92 @@ button:hover {
   font-size: 14px;
   text-align: center;
 } 
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  /* Adjust Login Container */
+  .login-container {
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Adjust the Login Form */
+  .login-form {
+    width: 90%;
+    max-width: 350px;
+  }
+
+  /* Adjust Logo Container */
+  .logo-container {
+    margin-bottom: 20px;
+  }
+
+  /* Adjust Chat Logo */
+  .chat-logo {
+    font-size: 36px;
+  }
+
+  /* Header Text */
+  h2 {
+    font-size: 1.5em;
+  }
+
+  /* Sign-in Button */
+  .sign-in-button {
+    padding: 10px 15px;
+    font-size: 1em;
+    width: 100%;
+  }
+
+  /* Adjust Input Fields */
+  .input-group input {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  /* Create Account Link */
+  .create-account-link {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  /* Adjust Pattern Section */
+  .pattern-container {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  /* Adjust Pattern Squares */
+  .pattern-square {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Adjust Welcome Message */
+  .welcome-message {
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* Page Header */
+  .page-header {
+    font-size: 1em;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Header Title */
+  .header-title {
+    font-size: 1.2em;
+  }
+
+  /* Settings Icon */
+  .settings-icon {
+    font-size: 1.2em;
+    right: 10px;
+  }
+}

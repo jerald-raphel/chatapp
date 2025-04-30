@@ -234,12 +234,14 @@
   font-size: 1.2em;
   font-style: italic;
 }
+
 .status{
   display: flex;
   flex-direction: column; /* Stack vertically */
   gap: 4px;
   align-items: flex-start; /* Align to left */
 }
+
 .settings-card {
   position: absolute;
   top: 60px;
@@ -267,7 +269,8 @@
 .theme-options button:hover {
   opacity: 0.8;
 }
-/* Add this to your ChatPage.css */
+
+/* Profile Card */
 .profile-card {
   position: fixed;
   top: 20%;
@@ -298,4 +301,132 @@
 
 .profile-card button:hover {
   background-color: #ff1f1f;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .main-section {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .chat-window {
+    flex-grow: 0;
+    height: 60vh;
+  }
+
+  .search-bar input {
+    width: 100%;
+  }
+
+  .chat-body {
+    padding: 10px;
+  }
+
+  .profile-card {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .chat-container {
+    height: 100%;
+  }
+
+  .top-nav {
+    padding: 10px;
+  }
+
+  .app-title {
+    font-size: 1.2em;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+    border-right: none;
+  }
+
+  .chat-list {
+    padding: 10px;
+  }
+
+  .chat-header .name {
+    font-size: 1em;
+  }
+
+  .chat-body {
+    padding: 10px;
+  }
+
+  .message {
+    font-size: 0.85em;
+  }
+
+  .chat-input-area {
+    padding: 10px 15px;
+  }
+
+  .chat-input-area input {
+    padding: 8px;
+  }
+
+  .chat-input-area button {
+    width: 70px;
+    padding: 8px;
+  }
+
+  .profile-card {
+    width: 180px;
+    top: 10%;
+    right: 10%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .top-nav {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .app-title {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .chat-window {
+    flex-grow: 1;
+    height: auto;
+  }
+
+  .chat-header {
+    padding: 10px;
+  }
+
+  .message {
+    font-size: 0.8em;
+  }
+
+  .chat-input-area input {
+    padding: 8px;
+  }
+
+  .chat-input-area button {
+    width: 60px;
+    padding: 8px;
+  }
+
+  .profile-card {
+    width: 160px;
+    top: 15%;
+    right: 5%;
+  }
 }
