@@ -5,7 +5,7 @@ import themes from '../screens/themes'; // Import the themes
 import '../styles/ChatPage.css';
 
 // Socket connection
-const socket = io('http://https://chataapp-server-1.onrender.com');
+const socket = io('https://chataapp-server-1.onrender.com');
 
 function ChatPage() {
   const [search, setSearch] = useState('');
@@ -24,7 +24,7 @@ function ChatPage() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://https://chataapp-server-1.onrender.com/api/all-users');
+        const response = await axios.get('https://chataapp-server-1.onrender.com/api/all-users');
         if (Array.isArray(response.data.users)) {
           setUsers(response.data.users);
         } else {
@@ -63,7 +63,7 @@ function ChatPage() {
       if (selectedUser && loggedInUser) {
         try {
           const response = await axios.get(
-            `http://https://chataapp-server-1.onrender.com/api/messages/conversation/${loggedInUser.name}/${selectedUser}`
+            `https://chataapp-server-1.onrender.com/api/messages/conversation/${loggedInUser.name}/${selectedUser}`
           );
           if (response.data && Array.isArray(response.data.messages)) {
             setUserMessages(response.data.messages);
@@ -84,7 +84,7 @@ function ChatPage() {
     if (!messageInput.trim() || !selectedUser) return;
 
     try {
-      const response = await axios.post('http://https://chataapp-server-1.onrender.com/api/messages/send', {
+      const response = await axios.post('https://chataapp-server-1.onrender.com/api/messages/send', {
         senderName: loggedInUser.name,
         receiverName: selectedUser,
         message: messageInput,
