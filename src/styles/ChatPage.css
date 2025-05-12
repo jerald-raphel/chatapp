@@ -399,8 +399,13 @@
   }
 
   .sidebar {
-    display: none;
-  }
+  display: block; /* Keep visible by default */
+}
+
+.sidebar-hidden {
+  display: none !important;
+}
+
 
   .chat-window {
     flex-grow: 1;
