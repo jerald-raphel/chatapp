@@ -554,51 +554,49 @@ function ChatPage() {
         )}
 
         {mobileChatView && selectedUser && (
-          <section className="chat-window" style={{ backgroundColor: theme.formBackground, height: '100%' }}>
-            <div className="chat-header">
-              <span className="back-arrow" onClick={handleCloseChat}>
-                ← Back
-              </span>
-              <div>
-                <span className="name">{selectedUser}</span>
-                <span className="status">{isUserOnline ? 'Online' : 'Offline'}</span>
-              </div>
-            </div>
-            <div className="chat-body">
-              {userMessages.map((message, index) => (
-                <div
-                  key={index}
-                  className={`message ${message.senderName === loggedInUser.name ? 'sent' : 'received'}`}
-                >
-                  <strong>{message.senderName}:</strong> {message.message}
-                </div>
-              ))}
-            </div>
-            <div className="chat-input-area">
-              <input
-                type="text"
-                placeholder="Type a message..."
-                value={messageInput}
-                onChange={(e) => setMessageInput(e.target.value)}
-                style={{
-                  backgroundColor: theme.formBackground,
-                  color: theme.text,
-                  border: `1px solid ${theme.placeholder}`,
-                }}
-              />
-              <button
-                onClick={handleMessageSend}
-                style={{
-                  backgroundColor: theme.button,
-                  color: '#fff',
-                  border: 'none',
-                }}
-              >
-                Send
-              </button>
-            </div>
-          </section>
-        )}
+  <section className="chat-window mobile" style={{ backgroundColor: theme.formBackground }}>
+    <div className="chat-header">
+      <span className="back-arrow" onClick={handleCloseChat}>←</span>
+      <div>
+        <span className="name">{selectedUser}</span>
+        <span className="status">{isUserOnline ? 'Online' : 'Offline'}</span>
+      </div>
+    </div>
+    <div className="chat-body">
+      {userMessages.map((message, index) => (
+        <div
+          key={index}
+          className={`message ${message.senderName === loggedInUser.name ? 'sent' : 'received'}`}
+        >
+          <strong>{message.senderName}:</strong> {message.message}
+        </div>
+      ))}
+    </div>
+    <div className="chat-input-area">
+      <input
+        type="text"
+        placeholder="Type a message..."
+        value={messageInput}
+        onChange={(e) => setMessageInput(e.target.value)}
+        style={{
+          backgroundColor: theme.formBackground,
+          color: theme.text,
+          border: `1px solid ${theme.placeholder}`,
+        }}
+      />
+      <button
+        onClick={handleMessageSend}
+        style={{
+          backgroundColor: theme.button,
+          color: '#fff',
+          border: 'none',
+        }}
+      >
+        Send
+      </button>
+    </div>
+  </section>
+)}
       </div>
     </div>
   );
