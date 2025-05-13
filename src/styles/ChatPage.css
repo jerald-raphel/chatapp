@@ -528,3 +528,29 @@
     right: 5%;
   }
 }
+.main-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .chat-window {
+    width: 100%;
+  }
+
+  .chat-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .back-arrow {
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #fff;
+  }
