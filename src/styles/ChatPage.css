@@ -1,4 +1,4 @@
-/* Chat Container Layout
+/* Chat Container Layout */
 .chat-container {
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-
+/* Top Nav Header */
 .top-nav {
   background-color: #242f3f;
   padding: 15px 20px;
@@ -52,7 +52,7 @@
   overflow: hidden;
 }
 
-
+/* Sidebar */
 .sidebar {
   width: 400px;
   background-color: #242f3f;
@@ -128,7 +128,7 @@
   color: #a9b3c1;
 }
 
-
+/* Chat Window */
 .chat-window {
   flex-grow: 1;
   display: flex;
@@ -136,7 +136,7 @@
   background-color: #1e293b;
 }
 
-
+/* Chat Header */
 .chat-header {
   display: flex;
   align-items: center;
@@ -163,6 +163,7 @@
   color: rgb(21, 180, 21);
 }
 
+/* Messages */
 .chat-body {
   flex-grow: 1;
   padding: 20px;
@@ -190,7 +191,7 @@
   background-color: #3a4759;
 }
 
-
+/* Input Area */
 .chat-input-area {
   display: flex;
   padding: 15px 20px;
@@ -236,9 +237,9 @@
 
 .status{
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stack vertically */
   gap: 4px;
-  align-items: flex-start; 
+  align-items: flex-start; /* Align to left */
 }
 
 .settings-card {
@@ -269,7 +270,7 @@
   opacity: 0.8;
 }
 
-
+/* Profile Card */
 .profile-card {
   position: fixed;
   top: 20%;
@@ -302,7 +303,7 @@
   background-color: #ff1f1f;
 }
 
-
+/* Responsive Design */
 @media screen and (max-width: 1024px) {
   .main-section {
     flex-direction: column;
@@ -386,14 +387,10 @@
   }
 }
 
-@media screen and (max-width: 480px) {
-  .chat-container {
-    height: 100%;
-  }
-
+/* @media screen and (max-width: 480px) {
   .top-nav {
-    padding: 10px;
     flex-direction: column;
+    padding: 10px;
   }
 
   .app-title {
@@ -402,66 +399,25 @@
   }
 
   .sidebar {
-    width: 100%;
-    padding: 10px;
-    border-right: none;
+  display: block; 
+}
+
+.sidebar-hidden {
+  display: none !important;
+}
+
+
+  .chat-window {
+    flex-grow: 1;
+    height: auto;
   }
 
-  .chat-list {
-    padding: 10px;
-  }
-
-  .chat-user {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .chat-user .avatar {
-    width: 36px;
-    height: 36px;
-  }
-
-  .user-details {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .user-details .name {
-    font-size: 1em;
-    font-weight: bold;
-    color: #fff;
-  }
-
-  .user-details .last-msg {
-    font-size: 0.75em;
-    color: #a9b3c1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .chat-time {
-    font-size: 0.7em;
-    color: #a9b3c1;
-    margin-left: auto;
-  }
-
-  .chat-header .name {
-    font-size: 0.95em;
-  }
-
-  .chat-body {
+  .chat-header {
     padding: 10px;
   }
 
   .message {
     font-size: 0.8em;
-  }
-
-  .chat-input-area {
-    padding: 10px 15px;
   }
 
   .chat-input-area input {
@@ -479,269 +435,54 @@
     right: 5%;
   }
 } */
-
-
-
-
-.chat-header .status {
-  font-size: 0.85em;
-  color: rgb(21, 180, 21);
-}
-
-/* Messages */
-.chat-body {
-  flex-grow: 1;
-  padding: 20px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.message {
-  max-width: 75%;
-  padding: 10px 15px;
-  border-radius: 10px;
-  font-size: 0.95em;
-  word-wrap: break-word;
-}
-
-.message.sent {
-  align-self: flex-end;
-  background-color: #007bff;
-}
-
-.message.received {
-  align-self: flex-start;
-  background-color: #3a4759;
-}
-
-/* Input Area */
-.chat-input-area {
-  display: flex;
-  padding: 15px 20px;
-  background-color: #242f3f;
-  border-top: 1px solid #3a4759;
-}
-
-.chat-input-area input {
-  flex-grow: 1;
-  padding: 10px;
-  background-color: #3a4759;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  margin-right: 10px;
-}
-
-.chat-input-area button {
-  width: 80px;
-  padding: 10px;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.chat-input-area button:hover {
-  background-color: #0056b3;
-}
-
-.no-chat-selected {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #a9b3c1;
-  font-size: 1.2em;
-  font-style: italic;
-}
-
-.status {
-  display: flex;
-  flex-direction: column; /* Stack vertically */
-  gap: 4px;
-  align-items: flex-start; /* Align to left */
-}
-
-.settings-card {
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.theme-options {
-  display: flex;
-  flex-direction: column;
-}
-
-.theme-options button {
-  margin: 5px 0;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-align: left;
-}
-
-.theme-options button:hover {
-  opacity: 0.8;
-}
-
-/* Profile Card */
-.profile-card {
-  position: fixed;
-  top: 20%;
-  right: 20%;
-  padding: 20px;
-  background-color: rgb(80, 77, 77);
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 250px;
-  text-align: center;
-}
-
-.profile-card h2 {
-  margin-bottom: 10px;
-}
-
-.profile-card p {
-  margin-bottom: 20px;
-}
-
-.profile-card button {
-  padding: 5px 10px;
-  background-color: #ff4f4f;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.profile-card button:hover {
-  background-color: #ff1f1f;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 1024px) {
-  .main-section {
-    flex-direction: column; /* Stack sidebar and chat window */
-  }
-  .sidebar {
-    width: 100%; /* Make sidebar take full width */
-    padding: 10px;
-    border-right: none; /* Remove right border */
-    border-bottom: 1px solid #3a4759; /* Add bottom border to separate from chat */
-  }
-  .chat-window {
-    flex-grow: 1; /* Let chat window take remaining space */
-    height: auto; /* Adjust height automatically */
-  }
-  .search-bar input {
-    width: 100%;
-  }
-  .chat-body {
-    padding: 10px;
-  }
-  .profile-card {
-    width: 200px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .chat-container {
-    height: 100%;
-  }
-  .top-nav {
-    padding: 10px;
-  }
-  .app-title {
-    font-size: 1.2em;
-  }
-  .sidebar {
-    width: 100%;
-    padding: 10px;
-    border-right: none;
-    border-bottom: 1px solid #3a4759; /* Ensure bottom border */
-  }
-  .chat-list {
-    padding: 10px;
-  }
-  .chat-header .name {
-    font-size: 1em;
-  }
-  .chat-body {
-    padding: 10px;
-  }
-  .message {
-    font-size: 0.85em;
-  }
-  .chat-input-area {
-    padding: 10px 15px;
-  }
-  .chat-input-area input {
-    padding: 8px;
-  }
-  .chat-input-area button {
-    width: 70px;
-    padding: 8px;
-  }
-  .profile-card {
-    width: 180px;
-    top: 10%;
-    right: 10%;
-  }
-}
-
 @media screen and (max-width: 480px) {
   .chat-container {
     height: 100%;
   }
+
   .top-nav {
     padding: 10px;
-    flex-direction: column; /* Stack title and actions */
+    flex-direction: column;
   }
+
   .app-title {
     font-size: 1.1em;
     margin-bottom: 10px;
   }
-  .main-section {
-    flex-direction: column; /* Ensure stacking on smallest screens */
-  }
+
   .sidebar {
     width: 100%;
     padding: 10px;
     border-right: none;
-    border-bottom: 1px solid #3a4759; /* Keep the bottom border */
   }
+
   .chat-list {
     padding: 10px;
   }
+
   .chat-user {
     display: flex;
     align-items: center;
     gap: 10px;
   }
+
   .chat-user .avatar {
     width: 36px;
     height: 36px;
   }
+
   .user-details {
     display: flex;
     flex-direction: column;
     width: 100%;
   }
+
   .user-details .name {
     font-size: 1em;
     font-weight: bold;
     color: #fff;
   }
+
   .user-details .last-msg {
     font-size: 0.75em;
     color: #a9b3c1;
@@ -749,30 +490,38 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+
   .chat-time {
     font-size: 0.7em;
     color: #a9b3c1;
     margin-left: auto;
   }
+
   .chat-header .name {
     font-size: 0.95em;
   }
+
   .chat-body {
     padding: 10px;
   }
+
   .message {
     font-size: 0.8em;
   }
+
   .chat-input-area {
     padding: 10px 15px;
   }
+
   .chat-input-area input {
     padding: 8px;
   }
+
   .chat-input-area button {
     width: 60px;
     padding: 8px;
   }
+
   .profile-card {
     width: 160px;
     top: 15%;

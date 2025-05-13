@@ -24,7 +24,8 @@
     useEffect(() => {
       const fetchUsers = async () => {
         try {
-          const response = await axios.get('https://chataapp-server-1.onrender.com/api/all-users');
+           const response = await axios.get('https://chataapp-server-1.onrender.com/api/all-users');
+          
           if (Array.isArray(response.data.users)) {
             setUsers(response.data.users);
           } else {
@@ -63,7 +64,8 @@
         if (selectedUser && loggedInUser) {
           try {
             const response = await axios.get(
-              `https://chataapp-server-1.onrender.com/api/messages/conversation/${loggedInUser.name}/${selectedUser}`
+               `https://chataapp-server-1.onrender.com/api/messages/conversation/${loggedInUser.name}/${selectedUser}`
+              
             );
             if (response.data && Array.isArray(response.data.messages)) {
               setUserMessages(response.data.messages);
@@ -84,7 +86,8 @@
       if (!messageInput.trim() || !selectedUser) return;
 
       try {
-        const response = await axios.post('https://chataapp-server-1.onrender.com/api/messages/send', {
+         const response = await axios.post('https://chataapp-server-1.onrender.com/api/messages/send', {
+      
           senderName: loggedInUser.name,
           receiverName: selectedUser,
           message: messageInput,
@@ -171,6 +174,20 @@
 
         {showSettingsCard && (
           <div className="settings-card" style={{ backgroundColor: theme.formBackground, padding: '20px', margin: '10px', borderRadius: '10px' }}>
+             <span
+        onClick={() => setShowSettingsCard(false)}
+        style={{
+          position: 'absolute',
+          top: '10px',
+          right: '15px',
+          cursor: 'pointer',
+          fontWeight: 'bold',
+          fontSize: '18px',
+          color: theme.text
+        }}
+      >
+        ×
+      </span>
             <h2>Select Theme</h2>
             <ul>
               {Object.keys(themes).map((themeName) => (
