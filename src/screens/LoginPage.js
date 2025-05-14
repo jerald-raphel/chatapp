@@ -31,8 +31,8 @@ function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const url = isSignUp
-        ? 'https://chataapp-server-1.onrender.com/api/signup '
-        : 'https://chataapp-server-1.onrender.com/api/login';
+        ? 'https://chatapp-server-cq7p.onrender.com/api/signup '
+        : 'https://chatapp-server-cq7p.onrender.com/api/login';
       //  ? 'http://localhost:1000/api/signup '
       //  : 'http://localhost:1000/api/login';
       
