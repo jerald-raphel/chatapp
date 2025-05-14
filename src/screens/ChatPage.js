@@ -318,7 +318,7 @@ import { io } from 'socket.io-client';
 import themes from '../screens/themes';
 import '../styles/ChatPage.css';
 
-const socket = io('https://chataapp-server-1.onrender.com');
+const socket = io('https://chatapp-server-cq7p.onrender.com');
 
 function ChatPage() {
   const [search, setSearch] = useState('');
