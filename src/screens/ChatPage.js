@@ -634,7 +634,8 @@ function ChatPage() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('https://chatapp-server-cq7p.onrender.com/api/all-users');
+        // const response = await axios.get('https://chatapp-server-cq7p.onrender.com/api/all-users');
+        const response = await axios.get('http://localhost:1000/api/all-users');
         if (Array.isArray(response.data.users)) {
           setUsers(response.data.users);
         } else {
@@ -673,7 +674,8 @@ function ChatPage() {
       if (selectedUser && loggedInUser) {
         try {
           const response = await axios.get(
-            `https://chatapp-server-cq7p.onrender.com/api/messages/conversation/${loggedInUser.name}/${selectedUser}`
+            // `https://chatapp-server-cq7p.onrender.com/api/messages/conversation/${loggedInUser.name}/${selectedUser}`
+            `http://localhost:1000/api/messages/conversation/${loggedInUser.name}/${selectedUser}`
           );
           if (response.data && Array.isArray(response.data.messages)) {
             setUserMessages(response.data.messages);
@@ -709,7 +711,8 @@ function ChatPage() {
   if (!messageInput.trim() || !selectedUser) return;
 
   try {
-    await axios.post('https://chatapp-server-cq7p.onrender.com/api/messages/send', {
+    // await axios.post('https://chatapp-server-cq7p.onrender.com/api/messages/send', {
+     await axios.post('http://localhost:1000/api/messages/send', {
       senderName: loggedInUser.name,
       receiverName: selectedUser,
       message: messageInput,
