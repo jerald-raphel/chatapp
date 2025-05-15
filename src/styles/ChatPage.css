@@ -565,16 +565,19 @@
     display: block;
   }
 
-  .profile-card,
+   .profile-card,
   .settings-card {
     position: absolute;
-    top: 50px;
+    top: 60px; /* leave some gap under top-nav */
     width: 100%;
-    height: calc(100% - 50px);
+    max-height: 80vh; /* limit height */
     background: white;
     z-index: 30;
     overflow-y: auto;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   }
+
 
   .chat-window.mobile {
     position: absolute;
