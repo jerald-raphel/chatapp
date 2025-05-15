@@ -706,29 +706,28 @@ function ChatPage() {
   }, [selectedUser, loggedInUser]);
 
   const handleMessageSend = async () => {
-    if (!messageInput.trim() || !selectedUser) return;
+  if (!messageInput.trim() || !selectedUser) return;
 
-    try {
-      const response = await axios.post('https://chatapp-server-cq7p.onrender.com/api/messages/send', {
-        senderName: loggedInUser.name,
-        receiverName: selectedUser,
-        message: messageInput,
-      });
+  try {
+    await axios.post('https://chatapp-server-cq7p.onrender.com/api/messages/send', {
+      senderName: loggedInUser.name,
+      receiverName: selectedUser,
+      message: messageInput,
+    });
 
-      const newMessage = response.data.data;
-      setUserMessages((prevMessages) => [...prevMessages, newMessage]);
-      setMessageInput('');
+    setMessageInput('');
 
-      socket.emit('send_message', {
-        senderName: loggedInUser.name,
-        receiverName: selectedUser,
-        message: messageInput,
-      });
-    } catch (error) {
-      console.error('Error sending message:', error);
-      setError('Failed to send message.');
-    }
-  };
+    socket.emit('send_message', {
+      senderName: loggedInUser.name,
+      receiverName: selectedUser,
+      message: messageInput,
+    });
+  } catch (error) {
+    console.error('Error sending message:', error);
+    setError('Failed to send message.');
+  }
+};
+
 
   const handleChangeUser = (user) => {
     setSelectedUser(user);
